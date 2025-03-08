@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+.footer {
+  width: 100%;
+  background-color: #ed109c;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  text-align: center;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 700;
+}

@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+.container {
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.buscaContainer {
+  margin-bottom: 2.5rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 36px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 6px solid #000000;
+  font-family: "Roboto", sans-serif;
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.campoBusca {
+  padding: 1rem 1.5rem;
+  width: 75%;
+  background-color: #000000;
+  color: #fff;
+  border: 2px solid #000000;
+  border-radius: 8px 0 0 8px;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.campoBusca:focus {
+  outline: none;
+  border-color: #ed109c;
+  background-color: #000000;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.campoBusca::placeholder {
+  color: #ffffff;
+  opacity: 1;
+  font-family: "Roboto", sans-serif;
+}
+
+.botaoBusca {
+  padding: 1rem 1.8rem;
+  background: #ed109c;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.botaoBusca:hover {
+  background: linear-gradient(to bottom, #ed109c, #df2c9d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.botaoBusca:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.botaoBusca::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.botaoBusca:hover::after {
+  left: 100%;
+}
+
+.opcoesFiltro {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #000000;
+}
+
+.opcoesFiltro label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.opcoesFiltro label:hover {
+  background-color: #ed109c;
+  transform: translateY(-2px);
+}
+
+.opcoesFiltro input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  margin: 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.opcoesFiltro input[type="radio"]:checked {
+  border-color: #000000;
+  border-width: 2px;
+}
+
+.opcoesFiltro input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.opcoesFiltro input[type="radio"]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 768px) {
+  .buscaContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .searchBox {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .campoBusca {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .botaoBusca {
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.8rem;
+  }
+
+  .opcoesFiltro {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .opcoesFiltro label {
+    width: 100%;
+    justify-content: center;
+  }
+}

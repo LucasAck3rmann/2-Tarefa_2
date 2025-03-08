@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+.tabelaContainer {
+  margin-top: 2.5rem;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.resultadosContagem {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: 4px solid #000;
+}
+
+.tableResponsive {
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 36px;
+  border: 6px solid #000000;
+}
+
+.tabelaFilmes {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.tabelaFilmes th,
+.tabelaFilmes td {
+  padding: 1.2rem 1rem;
+  text-align: left;
+  border-bottom: 6px solid #000000;
+  color: #000000;
+  transition: all 0.2s ease;
+}
+
+.tabelaFilmes th {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tabelaFilmes th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.tabelaFilmes th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.tabelaFilmes tr {
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.tabelaFilmes tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.tabelaFilmes tr:hover {
+  background-color: #e0e0e0;
+}
+
+.tabelaFilmes td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.tabelaFilmes td:nth-child(2) {
+  width: 35%;
+}
+
+.tabelaFilmes td:nth-child(3) {
+  width: 20%;
+}
+
+.tabelaFilmes td:nth-child(4) {
+  width: 120px;
+  text-align: center;
+}
+
+.tabelaFilmes td:nth-child(5) {
+  width: 100px;
+  text-align: center;
+}
+
+.posterImagem {
+  width: 100px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabelaFilmes tr:hover .posterImagem {
+  transform: scale(1.08);
+}
+
+.highlight {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-weight: bold;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.colunaCheckbox {
+  text-align: center;
+  width: 80px;
+}
+
+/* Classe apenas com cor de fundo, sem linhas verticais */
+.filmeAssistido {
+  background-color: rgba(76, 175, 80, 0.15) !important;
+}
+
+/* Estilo para o checkbox personalizado */
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #000000;
+  border: 2px solid #ed109c;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px #ed109c;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: #ed109c;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark 0.3s ease-in-out;
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* Mensagem de nenhum filme encontrado estilizada */
+.tabelaFilmes tr td[colspan="5"] {
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .tabelaFilmes th,
+  .tabelaFilmes td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .posterImagem {
+    width: 80px;
+    height: 120px;
+  }
+
+  .tableResponsive {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}

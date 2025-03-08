@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+.mensagemAssistido {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ed109c;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+  min-width: 300px;
+  max-width: 80vw;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+}
+
+.mensagemAssistido p {
+  margin: 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mensagemAssistido p::before {
+  content: "✓";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  color: #ed109c;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.mensagemAssistido strong {
+  font-weight: 700;
+  margin: 0 5px;
+  max-width: calc(100% - 40px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .mensagemAssistido {
+    width: 90%;
+    padding: 0.8rem 1.2rem;
+    min-width: auto;
+  }
+
+  .mensagemAssistido p {
+    font-size: 1rem;
+  }
+}
